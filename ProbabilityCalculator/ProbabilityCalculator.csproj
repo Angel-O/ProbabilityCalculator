@@ -212,7 +212,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Caclulator.cs" />
+    <Compile Include="Models\ICalculation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ILogger.cs" />
+    <Compile Include="Models\IParamValidator.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
