@@ -212,6 +212,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CalculationType.cs" />
+    <Compile Include="Models\Calculation\BinaryCalculationBase.cs" />
+    <Compile Include="Models\Calculation\BinaryCalculationFactory.cs" />
+    <Compile Include="Models\Calculation\CombinedWith.cs" />
+    <Compile Include="Models\Calculation\Either.cs" />
+    <Compile Include="Models\Calculation\ICalculationFactory.cs" />
     <Compile Include="Models\Calculator.cs" />
     <Compile Include="Models\Calculation\ICalculation.cs" />
     <Compile Include="Models\IdentityModels.cs" />

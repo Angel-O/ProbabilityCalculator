@@ -3,14 +3,16 @@
     /// <summary>
     /// Calculates <see cref="Either"/> probabilities
     /// </summary>
-    public class Either : ICalculation {
+    public class Either : BinaryCalculationBase {
+
+        public Either(double op1, double op2): base (op1, op2) { }
 
         /// <summary>
         /// <see cref="ICalculation.Calculate"/>
         /// </summary>
-        public double Calculate(double op1, double op2)
+        public override double Calculate()
         {
-            return op1 + op2 - op1 * op2;
+            return Op1 + Op2 - Op1 * Op2;
         }
     }
 }
