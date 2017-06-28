@@ -43,3 +43,4 @@ Date: 28/06/2017 21:13:37, Calculation: CombinedWith, Op1: 1, Op2: 1, Result: 1
 Date: 28/06/2017 21:17:14, Calculation: CombinedWith, Op1: 0.17775, Op2: 0.57, Result: 0.1013175
 Date: 28/06/2017 21:17:30, Calculation: CombinedWith, Op1: 0.17775, Op2: 0.57, Result: 0.1013175
 Date: 28/06/2017 21:17:36, Calculation: CombinedWith, Op1: 0.17778, Op2: 0.57, Result: 0.1013346
+Date: 28/06/2017 21:50:28, Calculation: CombinedWith, Op1: 1, Op2: 0, Result: 0

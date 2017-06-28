@@ -31,15 +31,15 @@ namespace ProbabilityCalculator.Models.Calculation
         [Required]
         [Range(0, 1, ErrorMessage = "Please enter a decimal number between 0 and 1")]
         [Display(Name = "First operator")]
-        public double Operator1 { get; set; }
+        public double? Operator1 { get; set; }
 
         [Required]
         [Range(0, 1, ErrorMessage = "Please enter a decimal number between 0 and 1")]
         [Display(Name = "Second operator")]
-        public double Operator2 { get; set; }
+        public double? Operator2 { get; set; }
 
         [ReadOnly(true)]
-        public double Result { get; set; }
+        public double? Result { get; set; }
 
         /// <summary>
         /// Returns true if the data provided by the user is valid, false otherwise
@@ -52,7 +52,7 @@ namespace ProbabilityCalculator.Models.Calculation
         /// <summary>
         /// Validate operators
         /// </summary>
-        private bool ValidateOperator(double param)
+        private bool ValidateOperator(double? param)
         {
             return param >= 0 && param <= 1;
         }

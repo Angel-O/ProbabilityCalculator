@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Web.Mvc;
 using System.Web.WebPages;
 using ProbabilityCalculator.Controllers.ViewItems;
@@ -15,8 +16,14 @@ namespace ProbabilityCalculator.Controllers
         public ActionResult Index()
         {
             ViewBag.FormMessage = FormMessages.GET_REQUEST_FORM_MESSAGE;
+            
+            return View(new CalculatorViewModel());
+        }
 
-           return View(new CalculatorViewModel());
+        //GET: Calculator/Calculate
+        public ActionResult Calculate()
+        {
+            return RedirectToAction("Index");
         }
 
         // POST: Calculator/Calculate
@@ -32,8 +39,8 @@ namespace ProbabilityCalculator.Controllers
                 return View("Index");
             }
 
-            // Get the relevant factory for the controller
-            ICalculationFactory calculationFactory = new BinaryCalculationFactory(viewModel.Operator1, viewModel.Operator2);
+            // Get the relevant factory for the controller (casting is safe at this point)
+            ICalculationFactory calculationFactory = new BinaryCalculationFactory((double) viewModel.Operator1, (double) viewModel.Operator2);
 
             // Convert the requested operation type
             CalculationType calculationType = EnumUtils.ConvertToEnum<CalculationType>(viewModel.SelectedCalculation);  
