@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Web.Mvc;
 using System.Web.WebPages;
 using ProbabilityCalculator.Controllers.ViewItems;
-using ProbabilityCalculator.Models;
 using ProbabilityCalculator.Models.Calculation;
 using ProbabilityCalculator.Models.Logging;
 using ProbabilityCalculator.Models.Utils;

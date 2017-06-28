@@ -11,13 +11,12 @@ namespace ProbabilityCalculator.Models.Logging
     /// </summary>
     public class LoggerFactory
     {
-        private static readonly NullLogger nullLogger = new NullLogger();
-
         /// <summary>
-        /// Default logger, currently does nothing
+        /// Default logger, currently does nothing: in a real scenario it would be best to default to a logger
+        /// that actually does logging
         /// </summary>
-        public static ILogger DefaultLogger => nullLogger;
-  
+        public static ILogger DefaultLogger { get; } = new NullLogger();
+
         /// <summary>
         /// returns a file logger if the user specified a file location or a safe null logger otherwise
         /// </summary>

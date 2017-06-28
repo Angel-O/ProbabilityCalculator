@@ -7,7 +7,7 @@ using System.Web;
 namespace ProbabilityCalculator.Controllers.ViewItems
 {
     /// <summary>
-    /// Helper class that stores error and notification messages
+    /// Helper class that gathers error and notification messages
     /// </summary>
     public static class FormMessages
     {

@@ -38,7 +38,7 @@ namespace ProbabilityCalculator.Models.Utils
         }
 
         /// <summary>
-        /// Convert a string to the specified enum type
+        /// Convert a string to the specified enum type, if not found it will return the default enum
         /// </summary>
         public static T ConvertToEnum<T>(string enumStringRepresentation) where T : struct
         {

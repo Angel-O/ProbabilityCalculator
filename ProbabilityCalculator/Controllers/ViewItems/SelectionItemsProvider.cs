@@ -10,11 +10,15 @@ namespace ProbabilityCalculator.Controllers.ViewItems
     /// </summary>
     internal class SelectionItemsProvider : ISelectionItemsProvider
     {
-        private static readonly SelectionItemsProvider Provider = new SelectionItemsProvider();
-        public static SelectionItemsProvider Instance => Provider ?? new SelectionItemsProvider();
+        #region Singleton
+
+        private static readonly SelectionItemsProvider provider = new SelectionItemsProvider();
+
+        public static SelectionItemsProvider Instance => provider ?? new SelectionItemsProvider();
 
         private SelectionItemsProvider() { }
-         
+
+        #endregion
 
         public IEnumerable<SelectListItem> Items<T>() where T : struct
         {
@@ -27,7 +31,7 @@ namespace ProbabilityCalculator.Controllers.ViewItems
                 {
                     Text = calculation.ToString(),
                     Value = calculation.ToString(),
-                    Selected = false // nothing selected by default //TODO pass predicate so the caller can specify a criteria for what items should be selected
+                    Selected = false // nothing selected by default
                 });
 
             return availableItems;
