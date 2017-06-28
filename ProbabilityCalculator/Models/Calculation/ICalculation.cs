@@ -1,4 +1,7 @@
-﻿namespace ProbabilityCalculator.Models.Calculation
+﻿
+using System;
+
+namespace ProbabilityCalculator.Models.Calculation
 {
     public interface ICalculation
     {

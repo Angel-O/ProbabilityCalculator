@@ -1,0 +1,10 @@
+Date: 28/06/2017 18:17:36, Calculation: Either, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 18:17:45, Calculation: Either, Op1: 1, Op2: 0.3, Result: 1
+Date: 28/06/2017 18:18:21, Calculation: Either, Op1: 1, Op2: 0.5, Result: 1
+Date: 28/06/2017 18:18:32, Calculation: CombinedWith, Op1: 0.2, Op2: 0.5, Result: 0.1
+Date: 28/06/2017 18:32:11, Calculation: Either, Op1: 0, Op2: 1, Result: 1
+Date: 28/06/2017 18:32:17, Calculation: Either, Op1: 1, Op2: 1, Result: 1
+Date: 28/06/2017 18:32:29, Calculation: Either, Op1: 1, Op2: 0.5, Result: 1
+Date: 28/06/2017 18:33:15, Calculation: CombinedWith, Op1: 1, Op2: 0, Result: 0
+Date: 28/06/2017 18:33:27, Calculation: CombinedWith, Op1: 1, Op2: 0.5, Result: 0.5
+Date: 28/06/2017 18:33:40, Calculation: CombinedWith, Op1: 0.2, Op2: 0.5, Result: 0.1

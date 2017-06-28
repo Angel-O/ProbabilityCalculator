@@ -6,14 +6,13 @@ using ProbabilityCalculator.Models.Utils;
 namespace ProbabilityCalculator.Controllers.ViewItems
 {
     /// <summary>
-    /// Provides a controller with view items
+    /// Provides a controller with a collection of selection items
     /// </summary>
     internal class SelectionItemsProvider : ISelectionItemsProvider
     {
-        private static readonly SelectionItemsProvider provider = new SelectionItemsProvider();
+        private static readonly SelectionItemsProvider Provider = new SelectionItemsProvider();
+        public static SelectionItemsProvider Instance => Provider ?? new SelectionItemsProvider();
 
-        public static SelectionItemsProvider Instance => provider ?? new SelectionItemsProvider();
-        
         private SelectionItemsProvider() { }
          
 

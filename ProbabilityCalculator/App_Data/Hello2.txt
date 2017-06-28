@@ -1,0 +1,1 @@
+Date: 28/06/2017 17:49:38, Calculation: Either, Op1: 1, Op2: 0, Result: 1

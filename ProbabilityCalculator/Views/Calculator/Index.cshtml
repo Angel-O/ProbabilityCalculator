@@ -6,8 +6,7 @@
 
 <h2>Index</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post, new {role = "form"})) 
 {
     @Html.AntiForgeryToken()
     
@@ -20,7 +19,6 @@
             @Html.LabelFor(model => model.AvailableCalculations, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.SelectedCalculation, new SelectList(Model.AvailableCalculations, "Text", "Value"), "-- Select calculation --")
-                @*                @Html.EditorFor(model => model.AvailableCalculations, new {htmlAttributes = new {@class = "form-control"}})*@
                 @Html.ValidationMessageFor(model => model.SelectedCalculation, "", new {@class = "text-danger"})
             </div>
         </div>
@@ -52,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Result, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Result, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Result, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"} })
                 @Html.ValidationMessageFor(model => model.Result, "", new { @class = "text-danger" })
             </div>
         </div>

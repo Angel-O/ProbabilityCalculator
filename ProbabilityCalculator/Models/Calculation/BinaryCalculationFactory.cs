@@ -11,7 +11,10 @@ namespace ProbabilityCalculator.Models.Calculation
     /// </summary>
     public class BinaryCalculationFactory : ICalculationFactory
     {
+        /// <summary> First operator </summary>
         private readonly double op1;
+
+        /// <summary> Second operator </summary>
         private readonly double op2;
 
         public BinaryCalculationFactory(double op1, double op2)
@@ -20,6 +23,9 @@ namespace ProbabilityCalculator.Models.Calculation
             this.op2 = op2;
         }
 
+        /// <summary>
+        /// Returns the <see cref="ICalculation"/> implemetation associted with the parameter specified
+        /// </summary>
         public ICalculation Calculation(CalculationType calculationType)
         {
             switch (calculationType)

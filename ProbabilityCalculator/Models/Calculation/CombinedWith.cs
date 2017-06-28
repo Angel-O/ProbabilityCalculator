@@ -1,4 +1,8 @@
-﻿namespace ProbabilityCalculator.Models.Calculation
+﻿
+using System;
+using ProbabilityCalculator.Models.Logging;
+
+namespace ProbabilityCalculator.Models.Calculation
 {
     /// <summary>
     /// Calculates <see cref="CombinedWith"/> probabilities
@@ -12,7 +16,9 @@
         /// </summary>
         public override double Calculate()
         {
-            return Op1 * Op2;
+            double result = Op1 * Op2;
+
+            return result;
         }
     }
 }
