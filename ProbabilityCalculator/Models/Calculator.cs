@@ -10,15 +10,23 @@ namespace ProbabilityCalculator.Models
 {
     public class Calculator
     {
-        private ICalculation calculation;
+        /*private ICalculation calculation;
 
         private readonly IParamValidator validator; // needs to be instantiated at a higher level
 
-        private readonly ICalculationFactory factory; 
+        private readonly ICalculationFactory factory;
 
-        public ILogger Logger { get; set; }
+        private ILogger logger;*/
 
-        public Calculator(ICalculationFactory factory, IParamValidator validator)
+        public double Operator1 { get; set; }
+
+        public double Operator2 { get; set; }
+
+        public double Result { get; set; }
+
+        public CalculationType CalculationType { get; set; }
+
+        /*public Calculator(ICalculationFactory factory, IParamValidator validator)
         {
             this.factory = factory; // needs to be instantiated with the right params
             this.validator = validator;
@@ -32,6 +40,6 @@ namespace ProbabilityCalculator.Models
             //do logging (async ideally...)
 
             return result;
-        }
+        }*/
     }
 }
