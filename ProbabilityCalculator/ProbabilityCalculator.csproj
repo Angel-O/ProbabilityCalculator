@@ -202,27 +202,24 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalculatorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ViewItems\FormMessages.cs" />
     <Compile Include="Controllers\ViewItems\ISelectionItemsProvider.cs" />
     <Compile Include="Controllers\ViewItems\SelectionItemsProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CalculationType.cs" />
     <Compile Include="Models\Calculation\BinaryCalculationBase.cs" />
     <Compile Include="Models\Calculation\BinaryCalculationFactory.cs" />
+    <Compile Include="Models\Calculation\CalculationType.cs" />
+    <Compile Include="Models\Calculation\CalculatorViewModel.cs" />
     <Compile Include="Models\Calculation\CombinedWith.cs" />
     <Compile Include="Models\Calculation\Either.cs" />
     <Compile Include="Models\Calculation\ICalculationFactory.cs" />
     <Compile Include="Models\Calculation\ICalculation.cs" />
-    <Compile Include="Models\CalculatorViewModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Logging\LoggerFactory.cs" />
     <Compile Include="Models\Logging\FileLogger.cs" />
     <Compile Include="Models\Utils\EnumUtils.cs" />
@@ -281,7 +278,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Calculator\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -1,1 +1,0 @@
-Date: 28/06/2017 18:00:46, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0

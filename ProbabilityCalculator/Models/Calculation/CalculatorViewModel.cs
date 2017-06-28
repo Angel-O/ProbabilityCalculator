@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using ProbabilityCalculator.Controllers.ViewItems;
 
-namespace ProbabilityCalculator.Models
+namespace ProbabilityCalculator.Models.Calculation
 {
     /// <summary>
     /// View Model for the Calculator View
