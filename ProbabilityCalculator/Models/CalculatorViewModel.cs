@@ -27,7 +27,7 @@ namespace ProbabilityCalculator.Models
         [Required]
         public string SelectedCalculation { get; set; }
 
-        [Display(Name = "File path")]
+        [Display(Name = "File name")]
         public string File { get; set; }
 
         [Required]
