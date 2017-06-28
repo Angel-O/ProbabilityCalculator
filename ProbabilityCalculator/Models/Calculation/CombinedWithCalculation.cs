@@ -5,11 +5,11 @@ using ProbabilityCalculator.Models.Logging;
 namespace ProbabilityCalculator.Models.Calculation
 {
     /// <summary>
-    /// Calculates <see cref="CombinedWith"/> probabilities
+    /// Calculates <see cref="CombinedWithCalculation"/> probabilities
     /// </summary>
-    public class CombinedWith : BinaryCalculationBase {
+    public class CombinedWithCalculation : BinaryCalculationBase {
 
-        public CombinedWith(double op1, double op2): base (op1, op2) { }
+        public CombinedWithCalculation(double op1, double op2): base (op1, op2) { }
 
         /// <summary>
         /// <see cref="ICalculation.Calculate"/>

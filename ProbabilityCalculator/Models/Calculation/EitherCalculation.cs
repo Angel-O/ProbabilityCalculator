@@ -1,11 +1,11 @@
 ﻿namespace ProbabilityCalculator.Models.Calculation
 {
     /// <summary>
-    /// Calculates <see cref="Either"/> probabilities
+    /// Calculates <see cref="EitherCalculation"/> probabilities
     /// </summary>
-    public class Either : BinaryCalculationBase {
+    public class EitherCalculation : BinaryCalculationBase {
 
-        public Either(double op1, double op2): base (op1, op2) { }
+        public EitherCalculation(double op1, double op2): base (op1, op2) { }
 
         /// <summary>
         /// <see cref="ICalculation.Calculate"/>

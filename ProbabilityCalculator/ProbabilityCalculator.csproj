@@ -216,8 +216,8 @@
     <Compile Include="Models\Calculation\BinaryCalculationFactory.cs" />
     <Compile Include="Models\Calculation\CalculationType.cs" />
     <Compile Include="Models\Calculation\CalculatorViewModel.cs" />
-    <Compile Include="Models\Calculation\CombinedWith.cs" />
-    <Compile Include="Models\Calculation\Either.cs" />
+    <Compile Include="Models\Calculation\CombinedWithCalculation.cs" />
+    <Compile Include="Models\Calculation\EitherCalculation.cs" />
     <Compile Include="Models\Calculation\ICalculationFactory.cs" />
     <Compile Include="Models\Calculation\ICalculation.cs" />
     <Compile Include="Models\Logging\LoggerFactory.cs" />

@@ -6,6 +6,9 @@ using System.Web;
 
 namespace ProbabilityCalculator.Controllers.ViewItems
 {
+    /// <summary>
+    /// Helper class that stores error and notification messages
+    /// </summary>
     public static class FormMessages
     {
         public static string GET_REQUEST_FORM_MESSAGE = "Select the operation and parameters (file name is optional)";

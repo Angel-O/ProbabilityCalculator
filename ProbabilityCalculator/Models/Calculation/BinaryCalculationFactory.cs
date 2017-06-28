@@ -31,10 +31,10 @@ namespace ProbabilityCalculator.Models.Calculation
             switch (calculationType)
             {
                 case CalculationType.CombinedWith:
-                    return new CombinedWith(op1, op2);
+                    return new CombinedWithCalculation(op1, op2);
 
                 case CalculationType.Either:
-                    return new Either(op1, op2);
+                    return new EitherCalculation(op1, op2);
 
                 default:
                     throw new ArgumentException("Unrecognized operation");
