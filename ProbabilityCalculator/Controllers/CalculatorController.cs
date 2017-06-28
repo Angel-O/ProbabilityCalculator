@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using ProbabilityCalculator.Controllers.ViewItems;
 using ProbabilityCalculator.Models;
 using ProbabilityCalculator.Models.Calculation;
 using ProbabilityCalculator.Models.Logging;
@@ -12,7 +13,9 @@ namespace ProbabilityCalculator.Controllers
     {
         // GET: Calculator
         public ActionResult Index()
-        {      
+        {
+            ViewBag.FormMessage = FormMessages.GET_REQUEST_FORM_MESSAGE;
+
            return View(new CalculatorViewModel());
         }
 
@@ -24,7 +27,8 @@ namespace ProbabilityCalculator.Controllers
             // Validate parameters
             if (!viewModel.IsValid())
             {
-                // TODO display error message
+                ViewBag.FormMessage = FormMessages.POST_REQUEST_INVALID_PARAMS;
+
                 return View("Index");
             }
 
@@ -43,9 +47,11 @@ namespace ProbabilityCalculator.Controllers
 
                 // Get the logger: ideally this logic shouldn't leak all the way up to the controller, 
                 // but unfortunately getting hold of the file path is not possible outside the controller
+                string filePath = System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{viewModel.File}");
+
                 ILogger logger = viewModel.File.IsEmpty() 
                     ? LoggerFactory.DefaultLogger 
-                    : LoggerFactory.Logger(System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{viewModel.File}"));  
+                    : LoggerFactory.Logger(filePath);  
 
                 // Log details
                 logger.Log(string.Format("Date: {0}, Calculation: {1}, Op1: {2}, Op2: {3}, Result: {4}",
@@ -57,6 +63,12 @@ namespace ProbabilityCalculator.Controllers
 
                 // Set the result to the view model and pass it back to the view
                 viewModel.Result = result;
+
+                // Add confirmation messages
+                ViewBag.FormMessage = FormMessages.POST_REQUEST_SUCCESS;
+                ViewBag.ConfirmationMessage = viewModel.File.IsEmpty()
+                    ? string.Empty
+                    : FormMessages.POST_REQUEST_LOG_NOTIFICATION + filePath;
 
                 return View("Index",  viewModel);
             }

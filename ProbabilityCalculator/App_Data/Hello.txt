@@ -27,3 +27,12 @@ Date: 28/06/2017 20:11:18, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
 Date: 28/06/2017 20:11:46, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
 Date: 28/06/2017 20:13:35, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
 Date: 28/06/2017 20:13:43, Calculation: CombinedWith, Op1: 0.4, Op2: 0.3, Result: 0.12
+Date: 28/06/2017 20:38:30, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:38:44, Calculation: CombinedWith, Op1: 1, Op2: 0, Result: 0
+Date: 28/06/2017 20:39:56, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:43:19, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:43:29, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:52:28, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:53:06, Calculation: Either, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:53:10, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 28/06/2017 20:53:33, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
