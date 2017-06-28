@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Web.Mvc;
 using ProbabilityCalculator.Controllers.ViewItems;
 
@@ -31,10 +29,12 @@ namespace ProbabilityCalculator.Models
         public string File { get; set; }
 
         [Required]
+        [Range(0, 1, ErrorMessage = "Please enter a decimal number between 0 and 1")]
         [Display(Name = "First operator")]
         public double Operator1 { get; set; }
 
         [Required]
+        [Range(0, 1, ErrorMessage = "Please enter a decimal number between 0 and 1")]
         [Display(Name = "Second operator")]
         public double Operator2 { get; set; }
 

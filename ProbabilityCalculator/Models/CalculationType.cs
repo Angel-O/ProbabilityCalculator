@@ -23,9 +23,6 @@ namespace ProbabilityCalculator.Models
         /// Either calculation
         /// </summary>
         [Display(Name = "EITHER")]
-        Either,
-
-
-        ThisWillThrow
+        Either
     }
 }

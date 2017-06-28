@@ -12,7 +12,7 @@ namespace ProbabilityCalculator.Controllers
     {
         // GET: Calculator
         public ActionResult Index()
-        {         
+        {      
            return View(new CalculatorViewModel());
         }
 
@@ -25,20 +25,20 @@ namespace ProbabilityCalculator.Controllers
             if (!viewModel.IsValid())
             {
                 // TODO display error message
-                return Index();
+                return View("Index");
             }
 
             // Get the relevant factory for the controller
             ICalculationFactory calculationFactory = new BinaryCalculationFactory(viewModel.Operator1, viewModel.Operator2);
 
             // Convert the requested operation type
-            CalculationType calculationType = EnumUtils.ConvertToEnum<CalculationType>(viewModel.SelectedCalculation);
-
-            // Get the corresponding calculation type
-            ICalculation calculation = calculationFactory.Calculation(calculationType);      
+            CalculationType calculationType = EnumUtils.ConvertToEnum<CalculationType>(viewModel.SelectedCalculation);  
 
             try
-            {               
+            {
+                // Get the corresponding calculation type
+                ICalculation calculation = calculationFactory.Calculation(calculationType);
+
                 double result = calculation.Calculate();
 
                 // Get the logger: ideally this logic shouldn't leak all the way up to the controller, 
@@ -62,10 +62,8 @@ namespace ProbabilityCalculator.Controllers
             }
             catch
             {
-                // TODO display error message
-                return Index();
-            }
-            
+                return new HttpStatusCodeResult(500, "Server Error");
+            }         
         }
     }
 }
