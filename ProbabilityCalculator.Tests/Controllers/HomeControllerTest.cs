@@ -13,7 +13,7 @@ namespace ProbabilityCalculator.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public void Get_Request_To_Index_Page_Should_Actually_Return_ViewResult()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -26,7 +26,7 @@ namespace ProbabilityCalculator.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void Get_Request_To_About_Page_Should_Return_Correct_View()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -35,7 +35,7 @@ namespace ProbabilityCalculator.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("P.C.A. the ultimate pro-calc application.", result.ViewBag.Message);
+            Assert.AreEqual("P.C.A. the ultimate pro-calc application.", result?.ViewBag.Message);
         }
     }
 }
