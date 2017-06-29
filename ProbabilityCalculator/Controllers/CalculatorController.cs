@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.WebPages;
 using ProbabilityCalculator.Controllers.ViewItems;
@@ -48,39 +49,55 @@ namespace ProbabilityCalculator.Controllers
                 // Get the corresponding calculation type
                 ICalculation calculation = calculationFactory.Calculation(calculationType);
 
+                // Perform the calculation
                 double result = calculation.Calculate();
 
-                // Get the logger: ideally this logic shouldn't leak all the way up to the controller, 
-                // but unfortunately getting hold of the file path is not possible outside the controller
-                string filePath = System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{viewModel.File}");
+                // Log to file asyncronously 
+                LogToFileAsync(viewModel, calculationType, result);
 
-                ILogger logger = viewModel.File.IsEmpty() 
-                    ? LoggerFactory.DefaultLogger 
-                    : LoggerFactory.Logger(filePath);  
+                // Set the result to the view model and pass it back to the view
+                viewModel.Result = result;
 
-                // Log details
+                return View("Index",  viewModel);
+            }
+            catch(Exception ex)
+            {
+                return new HttpStatusCodeResult(500, $"Server Error: {ex.Message}");
+            }         
+        }
+
+        /// <summary>
+        /// Log the calculations to file asyncrounously
+        /// </summary>
+        private async Task<ActionResult> LogToFileAsync(CalculatorViewModel viewModel, CalculationType calculationType, double result)
+        {
+            // Get the fle path
+            string filePath = System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{viewModel.File}");
+
+            // Get the logger: ideally this logic shouldn't leak all the way up to the controller, 
+            // but unfortunately getting hold of the file path is not possible outside the controller
+            ILogger logger = viewModel.File.IsEmpty()
+                ? LoggerFactory.DefaultLogger
+                : LoggerFactory.Logger(filePath);
+
+            // Set confirmation messages to be dispalyed on the UI
+            ViewBag.FormMessage = FormMessages.POST_REQUEST_SUCCESS;
+            ViewBag.ConfirmationMessage = viewModel.File.IsEmpty()
+                ? string.Empty
+                : FormMessages.POST_REQUEST_LOG_NOTIFICATION + filePath;
+
+            // Log details
+            await Task.Run(() =>
+            {
                 logger.Log(string.Format("Date: {0}, Calculation: {1}, Op1: {2}, Op2: {3}, Result: {4}",
                     DateTime.Now,
                     calculationType,
                     viewModel.Operator1,
                     viewModel.Operator2,
-                    result));
+                    result));         
+                });
 
-                // Set the result to the view model and pass it back to the view
-                viewModel.Result = result;
-
-                // Add confirmation messages
-                ViewBag.FormMessage = FormMessages.POST_REQUEST_SUCCESS;
-                ViewBag.ConfirmationMessage = viewModel.File.IsEmpty()
-                    ? string.Empty
-                    : FormMessages.POST_REQUEST_LOG_NOTIFICATION + filePath;
-
-                return View("Index",  viewModel);
-            }
-            catch
-            {
-                return new HttpStatusCodeResult(500, "Server Error");
-            }         
+            return new EmptyResult();
         }
     }
 }

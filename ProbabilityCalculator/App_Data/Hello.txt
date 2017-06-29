@@ -44,3 +44,12 @@ Date: 28/06/2017 21:17:14, Calculation: CombinedWith, Op1: 0.17775, Op2: 0.57, R
 Date: 28/06/2017 21:17:30, Calculation: CombinedWith, Op1: 0.17775, Op2: 0.57, Result: 0.1013175
 Date: 28/06/2017 21:17:36, Calculation: CombinedWith, Op1: 0.17778, Op2: 0.57, Result: 0.1013346
 Date: 28/06/2017 21:50:28, Calculation: CombinedWith, Op1: 1, Op2: 0, Result: 0
+Date: 29/06/2017 08:30:47, Calculation: CombinedWith, Op1: 1, Op2: 0, Result: 0
+Date: 29/06/2017 08:34:36, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 29/06/2017 08:41:10, Calculation: CombinedWith, Op1: 0.1, Op2: 0.1, Result: 0.01
+Date: 29/06/2017 08:43:06, Calculation: CombinedWith, Op1: 0, Op2: 0.5, Result: 0
+Date: 29/06/2017 08:44:31, Calculation: CombinedWith, Op1: 1, Op2: 0.3, Result: 0.3
+Date: 29/06/2017 08:45:45, Calculation: CombinedWith, Op1: 1, Op2: 1, Result: 1
+Date: 29/06/2017 08:47:11, Calculation: CombinedWith, Op1: 0, Op2: 0, Result: 0
+Date: 29/06/2017 08:48:01, Calculation: CombinedWith, Op1: 1, Op2: 0.9, Result: 0.9
+Date: 29/06/2017 08:48:21, Calculation: CombinedWith, Op1: 1, Op2: 0.8, Result: 0.8
