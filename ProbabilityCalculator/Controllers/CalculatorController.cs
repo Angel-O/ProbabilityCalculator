@@ -49,15 +49,13 @@ namespace ProbabilityCalculator.Controllers
                 // Get the corresponding calculation type
                 ICalculation calculation = calculationFactory.Calculation(calculationType);
 
-                // Perform the calculation
-                double result = calculation.Calculate();
+                // Set the result to the view model and 
+                viewModel.Result = calculation.Calculate();
 
                 // Log to file asyncronously 
-                LogToFileAsync(viewModel, calculationType, result);
+                LogToFileAsync(viewModel, calculationType);
 
-                // Set the result to the view model and pass it back to the view
-                viewModel.Result = result;
-
+                // Pass the view model back to the view
                 return View("Index",  viewModel);
             }
             catch(Exception ex)
@@ -69,7 +67,7 @@ namespace ProbabilityCalculator.Controllers
         /// <summary>
         /// Log the calculations to file asyncrounously
         /// </summary>
-        private async Task<ActionResult> LogToFileAsync(CalculatorViewModel viewModel, CalculationType calculationType, double result)
+        private async Task<ActionResult> LogToFileAsync(CalculatorViewModel viewModel, CalculationType calculationType)
         {
             // Get the fle path
             string filePath = System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{viewModel.File}");
@@ -94,7 +92,7 @@ namespace ProbabilityCalculator.Controllers
                     calculationType,
                     viewModel.Operator1,
                     viewModel.Operator2,
-                    result));         
+                    viewModel.Result));         
                 });
 
             return new EmptyResult();
